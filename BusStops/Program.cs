@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using BusStops.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<BusStopsContext>(options =>
+options.UseSqlite(
+builder.Configuration.GetConnectionString("BusStopsContext") ??
+throw new InvalidOperationException("Connection string 'BusStops' not found.")));
+
 
 var app = builder.Build();
 
