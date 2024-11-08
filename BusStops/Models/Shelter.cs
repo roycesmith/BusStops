@@ -1,8 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using static Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade;
 namespace BusStops.Models;
 
 public class Shelter
 {
-    public string? OBJECTID { get; set; }
+    [Key]
+    public int OBJECTID { get; set; }
     public string? HASTUS { get; set; }
     public string? DESCRIPTION { get; set; }
     public string? STREETNAME { get; set; }

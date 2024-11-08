@@ -5,6 +5,9 @@ namespace BusStops.Data;
 
 public class BusStopsContext : DbContext
 {
+    public BusStopsContext()
+    {
+    }
     public BusStopsContext(DbContextOptions<BusStopsContext> options)
         : base(options)
     {
