@@ -7993,24 +7993,27 @@
     ]
   },
   "packageFolders": {
-    "/Users/rsmith/.nuget/packages/": {}
+    "C:\\Users\\rsmith\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rsmith/Projects/BusStops/BusStops/BusStops.csproj",
+      "projectUniqueName": "C:\\Projects\\BusStops\\BusStops\\BusStops.csproj",
       "projectName": "BusStops",
-      "projectPath": "/Users/rsmith/Projects/BusStops/BusStops/BusStops.csproj",
-      "packagesPath": "/Users/rsmith/.nuget/packages/",
-      "outputPath": "/Users/rsmith/Projects/BusStops/BusStops/obj/",
+      "projectPath": "C:\\Projects\\BusStops\\BusStops\\BusStops.csproj",
+      "packagesPath": "C:\\Users\\rsmith\\.nuget\\packages\\",
+      "outputPath": "C:\\Projects\\BusStops\\BusStops\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/rsmith/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\rsmith\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8076,7 +8079,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.401/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
