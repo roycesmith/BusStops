@@ -38,13 +38,13 @@ public class IndexModel : PageModel
 
         _context.Database.ExecuteSqlRaw("""DELETE FROM Shelter""");
 
-        // foreach (var item in shelters)
-        // {
+        foreach (var item in shelters)
+        {
 
-        //     _context.Shelter.Add(item);
+            _context.Shelter.Add(item);
 
-        //     Console.WriteLine("-----------------");
-        // }
-        // await _context.SaveChangesAsync();
+            Console.WriteLine("-----------------");
+        }
+        await _context.SaveChangesAsync();
     }
 }
