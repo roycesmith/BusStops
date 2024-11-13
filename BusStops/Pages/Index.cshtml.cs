@@ -29,26 +29,31 @@ public class IndexModel : PageModel
 
 
     public IList<Shelter> shelters = [];
-    public async Task OnGet()
+
+    public async Task OnGetAsync()
     {
         getDataAsync();
     }
     public async Task getDataAsync(){
-        Loader loader = new();
-        shelters = loader.LoadFile();
+        
         // var allRecords = _context.Shelter.ToList();
         // _context.Shelter.RemoveRange(allRecords);
 
         // check of data exists in the table before deleting it
-        if (_context.Shelter.Any())
+        if (_context.Shelter.Any()){
+            shelters = _context.Shelter.ToList();
+        }else
         {
-            _context.Database.ExecuteSqlRaw("DELETE FROM Shelter");
+            // _context.Database.ExecuteSqlRaw("DELETE FROM Shelter");
+            // seeding the database with data from the csv file
+            Loader loader = new();
+            shelters = loader.LoadFile();
+            foreach (var item in shelters)
+            {
+                _context.Shelter.Add(item);
+            }
+            await _context.SaveChangesAsync();
         }
-
-        foreach (var item in shelters)
-        {
-            _context.Shelter.Add(item);
-        }
-        await _context.SaveChangesAsync();
+       
     }
 }
