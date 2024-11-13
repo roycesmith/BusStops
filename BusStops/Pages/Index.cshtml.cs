@@ -31,22 +31,23 @@ public class IndexModel : PageModel
     public IList<Shelter> shelters = [];
     public async Task OnGet()
     {
-        await getData();
+        getDataAsync();
     }
-    public async Task getData(){
+    public async Task getDataAsync(){
         Loader loader = new();
         shelters = loader.LoadFile();
         // var allRecords = _context.Shelter.ToList();
         // _context.Shelter.RemoveRange(allRecords);
 
-        _context.Database.ExecuteSqlRaw("""DELETE FROM Shelter""");
+        // check of data exists in the table before deleting it
+        if (_context.Shelter.Any())
+        {
+            _context.Database.ExecuteSqlRaw("DELETE FROM Shelter");
+        }
 
         foreach (var item in shelters)
         {
-
             _context.Shelter.Add(item);
-
-            Console.WriteLine("-----------------");
         }
         await _context.SaveChangesAsync();
     }

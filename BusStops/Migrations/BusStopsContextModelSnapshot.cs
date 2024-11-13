@@ -18,7 +18,7 @@ namespace BusStops.Migrations
 
             modelBuilder.Entity("BusStops.Models.Shelter", b =>
                 {
-                    b.Property<int>("OBJECTID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -55,6 +55,9 @@ namespace BusStops.Migrations
                     b.Property<string>("NORTHING")
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("OBJECTID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("ROAD_GRADIENT")
                         .HasColumnType("TEXT");
 
@@ -73,7 +76,7 @@ namespace BusStops.Migrations
                     b.Property<string>("geo_shape")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("OBJECTID");
+                    b.HasKey("Id");
 
                     b.ToTable("Shelter");
                 });
