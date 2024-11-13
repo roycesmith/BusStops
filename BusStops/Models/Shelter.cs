@@ -6,6 +6,7 @@ namespace BusStops.Models;
 public class Shelter
 {
     [Key]
+    public int Id { get; set; }
     public int OBJECTID { get; set; }
     public string? HASTUS { get; set; }
     public string? DESCRIPTION { get; set; }

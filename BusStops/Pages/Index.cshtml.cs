@@ -29,8 +29,11 @@ public class IndexModel : PageModel
 
 
     public IList<Shelter> shelters = [];
-    public async void OnGet()
+    public async Task OnGet()
     {
+        await getData();
+    }
+    public async Task getData(){
         Loader loader = new();
         shelters = loader.LoadFile();
         // var allRecords = _context.Shelter.ToList();
