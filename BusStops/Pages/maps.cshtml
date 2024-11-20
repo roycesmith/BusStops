@@ -1,0 +1,11 @@
+@page
+@model MapsModel
+@{
+    ViewData["Title"] = "Google Maps";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Google Maps implementation</p>
+
+<gmp-map center="37.4220656,-122.0840897" zoom="10" map-id="DEMO_MAP_ID" style="height: 400px"></gmp-map>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&libraries=maps&v=beta" defer>
